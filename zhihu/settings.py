@@ -15,3 +15,8 @@ NEWSPIDER_MODULE = 'zhihu.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'zhihu (+http://www.yourdomain.com)'
+
+#禁止cookies,防止被ban
+# COOKIES_ENABLED = False
+
+# LOG_LEVEL = 'WARNING'
