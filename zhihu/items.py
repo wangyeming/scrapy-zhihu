@@ -47,6 +47,11 @@ class ZhihuQuestionItem(Item):
     question_summary = Field()
     question_description = Field()
     answer_num = Field()
+
+class ZhihuAnswerItem(Item):
+    question_id = Field()
+    answer_id = Field()
+    url = Field()
     answerer_name = Field()
     answerer_tag = Field()
     answer_approve_num = Field()

@@ -8,4 +8,7 @@
 
 class ZhihuPipeline(object):
     def process_item(self, item, spider):
+        print 'spider:', spider.name
+        if spider.name == 'ZhihuQuestion':
+            print "1"
         return item
