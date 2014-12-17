@@ -11,14 +11,13 @@ class ZhihuQuestionSpider(CrawlSpider):
     allowed_domains = ['zhihu.com']
     start_urls = ['http://www.zhihu.com/']
 
-
     rules = (
         Rule(LinkExtractor(allow=r'question/\d+'), callback='parse_question_item', follow=True),
     )
 
     def parse_question_item(self, response):
-        # questions = []
-        # question = ZhihuQuestionItem()
+        questions = []
+        question = ZhihuQuestionItem()
         question = ZhihuQuestionItem()
         question['_id'] = response.url.split('/')[-1]
         question['url'] = response.url.encode('utf-8')
@@ -41,9 +40,9 @@ class ZhihuQuestionSpider(CrawlSpider):
                 self.parse_answer_item(response, question, sel)
         else:
             print "没有回答！"
-        # questions.append(question)
-        yield question
-        # return questions
+        questions.append(question)
+        # yield question
+        return questions
 
     def parse_answer_item(self, response, question, sel):
         answers = []
@@ -84,4 +83,5 @@ class ZhihuQuestionSpider(CrawlSpider):
             for answer_comment_num in answer['answer_comment_num']:
                 print answer_comment_num.encode('utf8')
         answers.append(answer)
+        # yield answer
         return answers

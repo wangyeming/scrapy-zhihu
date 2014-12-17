@@ -20,3 +20,5 @@ NEWSPIDER_MODULE = 'zhihu.spiders'
 # COOKIES_ENABLED = False
 
 # LOG_LEVEL = 'WARNING'
+
+ITEM_PIPELINES = {'zhihu.pipelines.ZhihuPipeline': 1}
