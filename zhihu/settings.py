@@ -19,6 +19,9 @@ NEWSPIDER_MODULE = 'zhihu.spiders'
 #禁止cookies,防止被ban
 # COOKIES_ENABLED = False
 
-# LOG_LEVEL = 'WARNING'
+LOG_LEVEL = 'WARNING'
 
-ITEM_PIPELINES = {'zhihu.pipelines.ZhihuPipeline': 1}
+ITEM_PIPELINES = {'zhihu.pipelines.ZhihuPipeline': 100}
+
+DATABASE = {'drivername': 'sqlite',
+            'database': 'zhihu.sqlite3'}
